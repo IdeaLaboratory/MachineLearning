@@ -51,7 +51,7 @@ from nltk.tokenize import PunktSentenceTokenizer
 from nltk.corpus import state_union
 ```
 Retrieve sentences from file and words from sentence.
-apply pos_tag on words
+apply pos_tag() on words
 
 ```python
 taggedWords = nltk.pos_tag(words)
