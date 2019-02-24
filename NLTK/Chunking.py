@@ -24,8 +24,10 @@ def partOfSpeechTaggig():
         #  pos_tag() take list of words or sentence as input and tag part of speech
         taggedWords = nltk.pos_tag(words)
         
-        grammer = R"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>*}"""
-        chunckingParser = nltk.RegexpParser(grammer)
+        #grammer = R"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>*}"""
+        chinkingGrammer = R"""Chunk: {<.*>}
+                                }<VB.*|TO|DT|IN>+{"""
+        chunckingParser = nltk.RegexpParser(chinkingGrammer)
         chunk = chunckingParser.parse(taggedWords)
 
         #for tWord in taggedWords:
