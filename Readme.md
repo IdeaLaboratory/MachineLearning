@@ -36,3 +36,27 @@ from nltk.stem import PorterStemmer
 from nltk.stem import LancasterStemmer
 ```
 **Commit:**  [Link](https://github.com/IdeaLaboratory/MachineLearning/commit/90dab19decb26939ddc5ea807d62e26e2c6b98a7)
+
+## Day 3 : 
+ 
+**What I leant** : Parts of speech (POS) are noun, verb, adjective, adverb, pronoun, preposition, conjunction, interjection, and sometimes numeral, article, or determiner.
+Learnt reading a text file and tag each word.
+
+**Thoughts** : 
+steps:
+
+imports
+ ```python
+from nltk.tokenize import PunktSentenceTokenizer
+from nltk.corpus import state_union
+```
+Retrieve sentences from file and words from sentence.
+apply pos_tag on words
+
+```python
+taggedWords = nltk.pos_tag(words)
+```
+
+note: PunktSentenceTokenizer is a pre trained but can be re-trained if require.
+
+**Commit:**  [Link](https://github.com/IdeaLaboratory/MachineLearning/commit/11e40fe0407bc4c01c0b63a5607e80869f251ecc)
