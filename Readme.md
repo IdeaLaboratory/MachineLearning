@@ -65,4 +65,10 @@ note: PunktSentenceTokenizer is a pre trained but can be re-trained if require.
  
 **What I leant** : learning chunking and chinking
 
+**Thoughts** :
+
+ ## Day 3 : 
+ 
+**What I leant** : Named-entity recognition(NER) AKA entity identification or entity chunking is a subtask of information extraction that seeks to locate and classify named entity mentions in unstructured text into pre-defined categories such as the person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc.
+
 **Thoughts** : 

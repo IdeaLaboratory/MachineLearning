@@ -1,8 +1,8 @@
-import nltk
-from nltk.tokenize import PunktSentenceTokenizer
-from nltk.corpus import state_union
 import os
 
+import nltk
+from nltk.corpus import state_union
+from nltk.tokenize import PunktSentenceTokenizer
 
 #read from txt file
 
@@ -23,15 +23,33 @@ def partOfSpeechTaggig():
 
         #  pos_tag() take list of words or sentence as input and tag part of speech
         taggedWords = nltk.pos_tag(words)
+
+        #region Chunking
+        grammer = R"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>*}"""
+        chunckingParser = nltk.RegexpParser(grammer)
+        chunk = chunckingParser.parse(taggedWords)
+
+         #for tWord in taggedWords:
+        chunk.draw()
+        #endregion
         
-        #grammer = R"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>*}"""
+        # region Chinking
+        '''
         chinkingGrammer = R"""Chunk: {<.*>}
                                 }<VB.*|TO|DT|IN>+{"""
         chunckingParser = nltk.RegexpParser(chinkingGrammer)
         chunk = chunckingParser.parse(taggedWords)
-
         #for tWord in taggedWords:
         chunk.draw()
+        '''
+        #endregion
+
+        # region namedEntityRecognition (NER)
+        '''
+        NamedEntity = nltk.ne_chunk(taggedWords)
+        NamedEntity.draw()
+        '''
+        #endregion
 
 # calling the function            
 partOfSpeechTaggig()
