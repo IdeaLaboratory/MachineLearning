@@ -72,3 +72,14 @@ note: PunktSentenceTokenizer is a pre trained but can be re-trained if require.
 **What I leant** : Named-entity recognition(NER) AKA entity identification or entity chunking is a subtask of information extraction that seeks to locate and classify named entity mentions in unstructured text into pre-defined categories such as the person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc.
 
 **Thoughts** : chunking vs chinking![chunking vs chinking](https://user-images.githubusercontent.com/13999170/53737879-bea40880-3eb3-11e9-9295-d59325c6c7b6.jpg)
+
+## Day 6 : 
+ 
+**What I leant** : Lemmatization
+Lemmatization is grouping together the different inflected forms of a word so they can be analysed as a single item.
+Lemmatization is similar to stemming but it brings context to the words. So it links words with similar meaning to one word.
+
+**Thoughts** : 
+  ocks : rock
+  corpora : corpus
+  better : good
