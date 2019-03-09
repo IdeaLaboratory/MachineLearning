@@ -80,6 +80,7 @@ Lemmatization is grouping together the different inflected forms of a word so th
 Lemmatization is similar to stemming but it brings context to the words. So it links words with similar meaning to one word.
 
 **Thoughts** : 
+  E XAMPLES:
   ocks : rock
   corpora : corpus
   better : good
