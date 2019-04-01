@@ -103,16 +103,7 @@ def print_sentiment_scores(df, analyser):
                 snt = analyser.polarity_scores(review)
                 sent_arr.append(snt)
         return sent_arr
-        #         for sentence in nltk.sent_tokenize(review):
-        #                 snt = analyser.polarity_scores(review)
-        #                 tempPosArray.append([sentence, snt['pos']])
-        #                 tempNegArray.append([sentence, snt['neg']])
-
-        #         pos_arr.append(tempPosArray)
-        #         neg_arr.append(tempNegArray)
-        #         tempPosArray = []
-        #         tempNegArray = []
-
+        
 # POS tagging => for consider only adverb, adjective, verb(for what? )
 
 '''
@@ -148,16 +139,8 @@ df_train['NewCol'] = sent_arr
 headers = ["review", "NewCol"]
 df_train.to_csv('I:\Information\WorkSpace\AdiRepo\MachineLearning\DataAnalytics\emo.csv', columns = headers)
 
-# df1 = df[['sent']]
-# df = df_o.review
-# df1.to_csv('I:\Information\WorkSpace\AdiRepo\MachineLearning\DataAnalytics\emo1.csv')
-# merged = pd.concat([df,df1])
-# merged.to_csv('I:\Information\WorkSpace\AdiRepo\MachineLearning\DataAnalytics\emoM.csv')
-
-# import pprint
-# print("{:-<40} {}".format(df['review'], str(df['sent'])))
 print('successfull')
 # Note
 # Rnn or logistic regrassion for huge data. or naive bayse algo SVM(classification algo). 
 # But if fuzzy then fails. Vader could perform better.
-
+## Next will try with *tf-idf* stands for Term frequency-inverse document frequency
