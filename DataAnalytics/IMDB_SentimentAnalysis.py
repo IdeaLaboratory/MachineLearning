@@ -4,7 +4,7 @@ import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib import style as stl
 from statsmodels.tsa.arima_model import ARIMA
-import seaborn as sns
+# import seaborn as sns
 import sklearn
 import os
 import string
@@ -25,7 +25,7 @@ import plotly.plotly as pyp
 import operator
 import time
 from sklearn.feature_extraction.text import CountVectorizer
-#from wordcloud import WordCloud
+# from wordcloud import WordCloud
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
@@ -36,7 +36,6 @@ from sklearn.svm import SVC
 print('Import successfull')
 
 # data cleaning
-
 
 def remove_stop_words(df):
     stop_words = set(stopwords.words('english'))
@@ -64,7 +63,6 @@ def remove_puntuation(df):
         return df
 
 # lematization => not sentax but simantax
-
 
 def lemma(df):
     lmtzr = WordNetLemmatizer()
@@ -96,19 +94,70 @@ def stemmer(df):
         stemmed = []
     return df
 
+def print_sentiment_scores(df, analyser):
+        sent_arr = []
+        # neg_arr = []
+        # tempPosArray = []
+        # tempNegArray = []
+        for review in df:
+                snt = analyser.polarity_scores(review)
+                sent_arr.append(snt)
+        return sent_arr
+        #         for sentence in nltk.sent_tokenize(review):
+        #                 snt = analyser.polarity_scores(review)
+        #                 tempPosArray.append([sentence, snt['pos']])
+        #                 tempNegArray.append([sentence, snt['neg']])
+
+        #         pos_arr.append(tempPosArray)
+        #         neg_arr.append(tempNegArray)
+        #         tempPosArray = []
+        #         tempNegArray = []
+
+# POS tagging => for consider only adverb, adjective, verb(for what? )
+
+'''
+lexicon based: 
+Emotion: 
+VADER (Valence Aware Dictionary for sEntiment Reasoning):
+'''
 
 # data processing
-df = pd.read_csv('imdb_master.csv', encoding='latin-1', index_col=0)
-df.head(20)
-df.tail(20)
+df_o = pd.read_csv('imdb_master.csv', encoding='latin-1', index_col=0)
+df = df_o
+# df.head(20)
+# df.tail(20)
 df = df[df.label != 'unsup']
 df_train = df[df.type == 'train']
-df_train = df_train[:15000]
+df_train = df_train[:1500]
 df_test = df[df.type == 'test']
-df_test = df_test[:5000]
+df_test = df_test[:500]
 
-y_train = df_train.label
-y_test = df_test.label
+# y_train = df_train.label
+# y_test = df_test.label
+
 df_train.review = remove_stop_words(df_train.review)
 df_test.review = remove_stop_words(df_test.review)
-print(df_test)
+# print(df_test)
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+analyzer = SentimentIntensityAnalyzer()
+# analyzer(df_train['review'])
+# df = pd.DataFrame()
+sent_arr = print_sentiment_scores(df_train['review'], analyzer)
+df_train['NewCol'] = sent_arr
+headers = ["review", "NewCol"]
+df_train.to_csv('I:\Information\WorkSpace\AdiRepo\MachineLearning\DataAnalytics\emo.csv', columns = headers)
+
+# df1 = df[['sent']]
+# df = df_o.review
+# df1.to_csv('I:\Information\WorkSpace\AdiRepo\MachineLearning\DataAnalytics\emo1.csv')
+# merged = pd.concat([df,df1])
+# merged.to_csv('I:\Information\WorkSpace\AdiRepo\MachineLearning\DataAnalytics\emoM.csv')
+
+# import pprint
+# print("{:-<40} {}".format(df['review'], str(df['sent'])))
+print('successfull')
+# Note
+# Rnn or logistic regrassion for huge data. or naive bayse algo SVM(classification algo). 
+# But if fuzzy then fails. Vader could perform better.
+
