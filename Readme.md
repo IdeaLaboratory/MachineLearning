@@ -84,3 +84,11 @@ Lemmatization is similar to stemming but it brings context to the words. So it l
   ocks : rock
   corpora : corpus
   better : good
+  
+  ## Day 7 : CORPUS
+ 
+**What I leant** : Corpus is a Latin word which means body. In NLP A body of texts is called Corpus, Corpora is the plural form. Corpora often include extra information such as a tag for each word indicating its part-of-speech, and perhaps the parse tree for each sentence.
+A corpus provides better description of a language
+
+**Thoughts** : 
+steps:
