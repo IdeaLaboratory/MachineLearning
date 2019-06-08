@@ -105,3 +105,6 @@ venv.bak/
 /.vs
 /NLTK/.vs
 /.vscode
+/ML.NET/SentimentAnalysis/SentimentAnalysis1/SentimentAnalysis1/obj
+/ML.NET/SentimentAnalysis/SentimentAnalysis1/SentimentAnalysis1/bin/Debug/netcoreapp2.1
+/ML.NET/SentimentAnalysis/SentimentAnalysis1/.vs/SentimentAnalysis1
