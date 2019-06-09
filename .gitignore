@@ -108,3 +108,7 @@ venv.bak/
 /ML.NET/SentimentAnalysis/SentimentAnalysis1/SentimentAnalysis1/obj
 /ML.NET/SentimentAnalysis/SentimentAnalysis1/SentimentAnalysis1/bin/Debug/netcoreapp2.1
 /ML.NET/SentimentAnalysis/SentimentAnalysis1/.vs/SentimentAnalysis1
+/ML.NET/CabFarePrediction/.vs/CabFarePrediction/v16
+/ML.NET/CabFarePrediction/obj
+/ML.NET/CabFarePrediction/bin/Debug/netcoreapp2.1
+/ML.NET/CabFarePrediction/CabFarePrediction.csproj.user
