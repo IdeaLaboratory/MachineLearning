@@ -27,8 +27,6 @@ namespace SentimentAnalysis1
             Predict(mlContext, model);
 
             UseModelWithBatchItems(mlContext, model);
-
-
         }
 
         private static void Predict(MLContext mlContext, ITransformer model)
@@ -122,6 +120,11 @@ namespace SentimentAnalysis1
             IDataView dataView = mlContext.Data.LoadFromTextFile<SentimentData>(_dataPath, hasHeader: false);
             TrainTestData splitDataView = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.25);
             return splitDataView;
+        }
+
+        public static void function1()
+        {
+
         }
 
     }

@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+*.log
 
 # Distribution / packaging
 .Python
@@ -112,3 +113,4 @@ venv.bak/
 /ML.NET/CabFarePrediction/obj
 /ML.NET/CabFarePrediction/bin/Debug/netcoreapp2.1
 /ML.NET/CabFarePrediction/CabFarePrediction.csproj.user
+/ML.NET/CabFarePrediction/.vs/CabFarePrediction/DesignTimeBuild
